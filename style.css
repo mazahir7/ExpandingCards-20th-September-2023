@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+
+  font-family: "Muli", sans-serif;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+
+  display: flex;
+  width: 90vw;
+
+}
+
+.panel {
+
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+
+  flex: 1;
+  margin-right: 10px;
+  position: relative;
+  transition: flex .7s ease-in;
+}
+
+.panel:last-child {
+  margin-right: 0;
+}
+
+.panel--1 {
+  background-image: url(images/realMadrid.jpg);
+}
+
+.panel--2 {
+  background-image: url(images/arsenal.jpg);
+}
+
+.panel--3 {
+  background-image: url(images/manchesterUnited.jpg);
+}
+
+.panel--4 {
+  background-image: url(images/barcelona.jpg);
+}
+
+.panel--5 {
+  background-image: url(images/bayernMunich.jpg);
+}
+
+.panel h3 {
+  text-transform: capitalize;
+  font-size: 24px;
+
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.panel--active {
+  flex: 5;
+}
+
+.panel--active h3 {
+  opacity: 1;
+  transition: opacity .3s ease-in .6s;
+}
+
+/* 30em == 480px (1em = 16px) */
+@media(max-width: 30em) {
+
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    display: none;
+  }
+}
